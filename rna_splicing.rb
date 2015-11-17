@@ -18,3 +18,9 @@ converted = RnaToProt.convert( DnaToRna.convert(main_seq))
 
 puts converted
 
+|ATG| -> M
+&TAG&
+&TGA&
+&TAA&
+
+AGCC|ATG|&TAG&C&TAA&CTCAGGTTAC|ATG|GGG|ATG|ACCCCGCGACTTGGAT&TAG&AGTCTCTTTTGGAA&TAA&GCC&TGA&|ATG|ATCCGAG&TAG&CATCTCAG
