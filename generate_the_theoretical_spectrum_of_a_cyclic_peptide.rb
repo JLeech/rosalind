@@ -14,9 +14,9 @@ def get_theoretical_spectrum(peptide)
   		indices.product(indices).reject{ |i,j| i > j }.each do |i,j|
   			subpeptides[circular_peptide[i..j]] = 1 if subpeptides[circular_peptide[i..j]] == 0
   		end
+  		break
 	end
 	subpeptides[peptide] = 1
-	#puts subpeptides.values.sort
 	result = []
 	subpeptides.each do |subpeptide, places| 
 		places.times { result << ProteinMassCalculator.calculate_mass(subpeptide) }
@@ -31,4 +31,4 @@ def circular_combinations(peptide)
 	return circular_combinations
 end
 
-print get_theoretical_spectrum("YNLFDSLPWMLDLC")
+#print get_theoretical_spectrum("YNLFDSLPWMLDLC")
