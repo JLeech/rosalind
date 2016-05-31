@@ -125,4 +125,3 @@ nodes = parse_graph(graph).compact
 
 puts find_cycle_by_random(nodes, count_connections(nodes)).join("->")
 
-
