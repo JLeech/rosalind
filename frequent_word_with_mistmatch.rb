@@ -43,16 +43,16 @@ def get_k_meres(k)
 	"ATGC".split("").repeated_permutation(k).to_a.map(&:join).sort
 end
 
-text = "CACAGTAGGCGCCGGCACACACAGCCCCGGGCCCCGGGCCGCCCCGGGCCGGCGGCCGCCGGCGCCGGCACACCGGCACAGCCGTACCGGCACAGTAGTACCGGCCGGCCGGCACACCGGCACACCGGGTACACACCGGGGCGCACACACAGGCGGGCGCCGGGCCCCGGGCCGTACCGGGCCGCCGGCGGCCCACAGGCGCCGGCACAGTACCGGCACACACAGTAGCCCACACACAGGCGGGCGGTAGCCGGCGCACACACACACAGTAGGCGCACAGCCGCCCACACACACCGGCCGGCCGGCACAGGCGGGCGGGCGCACACACACCGGCACAGTAGTAGGCGGCCGGCGCACAGCC"
-k_mere_length = 10
-distance = 2
+text = "GCTCTCTCG"
+k_mere_length = text.length
+distance = 3
 
 k_meres = get_k_meres(k_mere_length)
 
 
 frequence = get_most_frequent_k_meres(k_meres, text, distance)
 max_frequence = frequence.values.max
-puts  Hash[ frequence.select {|k,v| v == max_frequence} ].keys.join(" ")
+puts  Hash[ frequence.select {|k,v| v == max_frequence} ].keys
 
 # text = "ACGTTGCATGTCGCATGATGCATGAGAGCT"
 # k_length = 4

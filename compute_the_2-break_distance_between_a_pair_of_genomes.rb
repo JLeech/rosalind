@@ -25,14 +25,17 @@ end
 
 def compute_distance(p, dnas_cycles)
 	graph = compute_graph(dnas_cycles)
+	puts "#{graph}"
 	components = 0
 	nodes_ids = graph.keys
-
+	puts "#{nodes_ids}"
     while !nodes_ids.empty?
     	components += 1
     	current_nodes = [nodes_ids.pop]
+    	puts "#{current_nodes}"
     	while !current_nodes.empty?
     	 	current_nodes = current_nodes[0..-2] + graph[current_nodes.last] & nodes_ids
+    		puts "C : #{current_nodes}"
     		nodes_ids -= current_nodes
     	end
     end
